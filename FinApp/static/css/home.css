@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 body {
     display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -25,17 +19,14 @@ body {
 }
 
 .barralateral {
-  width: 178px;
+  width: 200px;
   background-color: #6c2594;
   color: white;
   padding: 20px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  height: 25.2cm;
-  position: absolute;
-  top: 0;
-}
 
+}
 
 .barralateral h2 {
   margin-bottom: 20px;
@@ -61,11 +52,9 @@ body {
 }
 
 .main {
-  margin-left: 200px; /* mesma largura da sidebar */
   flex: 1;
   padding: 22px;
 }
-
 
 .main h1 {
   margin-bottom: 20px;
@@ -157,127 +146,70 @@ body {
   background-color: #592075;
 }
 
-/* AJUSTES PARA A CAIXA DO GRÁFICO */
+/*graficos*/
 .chart-box-barras {
-    /* Melhor gerenciamento de espaço e largura */
-    width: 100%; /* Faz o gráfico ocupar a largura total do container pai (melhor em layouts responsivos) */
-    max-width: 700px; /* Limita o tamanho máximo, se necessário, para que não fique gigante em telas muito largas */
-    
-    /* Espaçamento e Posicionamento */
-    margin: 25px 0; /* Aumenta o espaçamento vertical e remove a margem lateral (deixe o container pai gerenciar o alinhamento) */
-    padding: 20px; /* Aumenta o padding interno para que o gráfico não fique "colado" nas bordas */
-    
-    /* Visual */
-    background-color: white;
-    border-radius: 12px; /* Aumenta o arredondamento para um visual mais suave */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Sombra mais destacada e moderna */
-    
-    /* Garante que o conteúdo do gráfico não transborde */
-    overflow: hidden; 
+  width: 600px;
+  margin: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-/* ===== MODAL DE METAS (estilo roxo) ===== */
 .modal {
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.oculto {
-    display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
 .modal-content {
-    background-color: #6c2594; /* roxo principal */
-    padding: 30px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
-    color: white;
-    animation: fadeIn 0.3s ease;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  position: relative;
 }
 
-.modal-content h2 {
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
-    color: #fff;
+.fechar {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
 }
 
-.fechar-modal {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #ddd;
-    font-size: 26px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
+.oculto {
+  display: none;
 }
 
-.fechar-modal:hover {
-    color: #fff;
+/* --- Estilo do Botão Sair na Barra Superior --- */
+.btn-sair {
+    /* Faz parecer um botão ou link discreto */
+    text-decoration: none;
+    color: var(--cor-texto-secundario); /* Cinza suave */
+    padding: 8px 15px;
+   margin-top: 700px; 
+    /* Garante que o texto e o ícone fiquem alinhados */
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-/* ===== FORMULÁRIO ===== */
-#form-meta label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: #ddd;
+.btn-sair i {
+    /* Cor do ícone */
+    color: var(--cor-gasto); /* Sugerido vermelho para ação de sair/logout */
 }
 
-#form-meta input,
-#form-meta textarea,
-#form-meta select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-    background-color: #2f2f2f;
-    color: #fff;
-    font-size: 0.95em;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+.btn-sair:hover {
+    color: var(--cor-texto-principal); /* Fica mais claro ao passar o mouse */
+    background-color: #383838; /* Um fundo sutil para destacar */
 }
-
-#form-meta textarea {
-    resize: none;
-}
-
-/* ===== BOTÃO ===== */
-#form-meta button[type="submit"] {
-    background-color: #7b2fc2; /* tom mais claro para destaque */
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 25px;
-    width: 100%;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-#form-meta button[type="submit"]:hover {
-    background-color: #8f44d6;
-}
-
-/* ===== ANIMAÇÃO ===== */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-

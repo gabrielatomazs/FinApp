@@ -24,12 +24,6 @@ body {
     min-height: 100vh;
 }
 
-.logo img {
-    width: 110%;
-    height: auto;
-    display: block;
-}
-
 ul {
     list-style: none;
     padding: 0;
@@ -268,7 +262,7 @@ a {
     width: 90%;
     max-width: 500px;
     position: relative;
-    box-shadow: 0 5px 25px rgba(247, 246, 246, 0.5);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
     color: var(--cor-texto-principal);
 }
 
@@ -318,7 +312,6 @@ a {
     width: 100%;
     font-size: 1em;
 }
-
 .barralateral {
   width: 178px;
   background-color: #6c2594;
@@ -353,4 +346,3 @@ a {
   color: #ffff;
   text-decoration: none;
 }
-
